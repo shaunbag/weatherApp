@@ -1,13 +1,18 @@
 import './App.css';
+import React from 'react';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { SearchResults } from '../SearchResults/SearchResults';
 
-function App() {
+
+class App extends React.Component {
+  
+
+  render(){
   return (
     <div className="App">
       <header className="App-header">
 
-        <p>Welcome to Weather App</p>
+        <h1 className="title" >Welcome to Weather App</h1>
 
         <SearchBar />
         <SearchResults />
@@ -15,6 +20,7 @@ function App() {
       </header>
     </div>
   );
+}
 }
 
 export default App;

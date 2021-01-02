@@ -1,26 +1,45 @@
-const apiKey = '6dbaa32ecc0517eedc3c13905fc9f199';
+const apiKey = '1b5eef5e5c7521e18eb3924130c99709';
 
-const weather = async(location) => {
-    
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`);
-    try {
-        if (response.ok) {
-            const responseJson = response.json();
-            console.log(response);
-            return responseJson.map(weather => {
-                return {
-                    location: weather.location,
-                    temp: weather.temp,
-                    clouds: weather.cloud,
-                    humidity: weather.humidity
-                }
-            });
-            
+const Weather = async(location) => {
+    const urlToFetch = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
+    try{
+        const response = await fetch(urlToFetch);
+        if(response.ok){
+          const jsonResponse = await response.json();
+          console.log(jsonResponse);
+          return jsonResponse;
         }
-        throw new error('failed');
-    }catch(error){
+        throw new Error('Request failed!');
+      } catch(error){
         console.log(error.message);
-    }
-}; 
+      }
+    };
 
-export default weather;
+export default Weather;
+
+
+
+// wanderlust api fetch from codecademy project
+
+/*
+
+
+const openWeatherKey = '1b5eef5e5c7521e18eb3924130c99709';
+const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
+
+
+const getForecast = async() => {
+  
+  const urlToFetch = weatherUrl + '?&q=' + 'norwich' + '&APPID=' + openWeatherKey;
+  try{
+    const response = await fetch(urlToFetch);
+    if(response.ok){
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+      return jsonResponse;
+    }
+    throw new Error('Request failed!');
+  } catch(error){
+    console.log(error.message);
+  }
+}*/
