@@ -23,14 +23,29 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-shadow: 3px 3px rgba(0, 0, 104, 0.5);
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.title {
-  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+.results {
+  background-color: rgba(91, 157, 231, 0.219);
+  border-radius: 10px;
+  box-shadow: 3px 3px rgba(0, 0, 104, 0.5);
+  margin-top: 20px;
+  padding: 10px 50px 10px 50px;
+}
+
+input {
+  font-size: large;
+  height: 30px;
+  width: 300px;
+  border-radius: 9px;
+  border-color: gray;
+  text-align: center;
+  background-color: rgb(215, 232, 238);
 }
 
 @keyframes App-logo-spin {
