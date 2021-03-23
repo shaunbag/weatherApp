@@ -3,7 +3,7 @@ import React from 'react';
 import { SearchResults } from '../SearchResults/SearchResults';
 import { SearchBar } from '../SearchBar/SearchBar';
 
-const apiKey = '************';
+const apiKey = '1b5eef5e5c7521e18eb3924130c99709';
 
 class App extends React.Component {
   state = {                             // constructor function deprecated in current version of react
